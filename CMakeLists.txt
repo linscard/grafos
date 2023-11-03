@@ -19,4 +19,8 @@ add_executable(grafos main.cpp
         HeapSort.h
         ShellSort.cpp
         ShellSort.h
+        ShellSortForInt.cpp
+        ShellSortForInt.h
+        Check.cpp
+        Check.h
 )

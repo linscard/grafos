@@ -8,6 +8,7 @@ struct Vertex {
     int* neighbors;
     int numNeighbors;
     int color;
+    Vertex* pointNeighbors;
 };
 
 #endif // VERTEX_H

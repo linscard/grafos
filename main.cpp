@@ -9,6 +9,8 @@ using namespace std;
 #include "MergeSort.h"
 #include "HeapSort.h"
 #include "ShellSort.h"
+#include "ShellSortForInt.h"
+#include "Check.h"
 
 
 
@@ -20,8 +22,6 @@ int main() {
 
      Vertex graph[numVertices];
 
-
-    // Ler a vizinhança de cada vértice
     for (int i = 0; i < numVertices; ++i) {
         int numNeighbors;
         std::cin >> numNeighbors;
@@ -29,43 +29,84 @@ int main() {
         graph[i].neighbors = new int[numNeighbors];
         graph[i].numNeighbors = numNeighbors;
 
-        // Ler os neighbors do vértice e adicionar ao grafo
         for (int j = 0; j < numNeighbors; ++j) {
             int neighbor;
             std::cin >> neighbor;
 
             graph[i].neighbors[j] = neighbor;
-
-            // Adicionar neighbor ao grafo
-            // (depende da implementação da classe Graph)
         }
     }
 
-    // Ler as cores de cada vértice
+    int colors[numVertices];
+
     for (int i = 0; i < numVertices; ++i) {
         int cor;
         std::cin >> cor;
         graph[i].color = cor;
-        // Atribuir cor ao vértice no grafo
-        // (depende da implementação da classe Graph)
+        colors[i] = cor;
     }
 
     for (int i = 0; i < numVertices; ++i) {
-       cout << "Vertex: " << graph[i].index << " Color: " << graph[i].color << endl;
-        for (int j = 0; j < graph[i].numNeighbors; ++j) {
-            cout << graph[i].neighbors[j] << " ";
+        Vertex item = graph[i];
+        int numNeighbors = item.numNeighbors;
+
+        graph[i].pointNeighbors = new Vertex[numNeighbors];
+        for (int j = 0; j < numNeighbors; ++j) {
+            Vertex neighbor = graph[item.neighbors[j]];
+            graph[i].pointNeighbors[j] = neighbor;
         }
-        cout << endl;
     }
 
-    ShellSort(graph, numVertices);
 
-    for (int i = 0; i < numVertices; ++i) {
-        cout << "Vertex: " << graph[i].index << " Color: " << graph[i].color << endl;
-        for (int j = 0; j < graph[i].numNeighbors; ++j) {
-            cout << graph[i].neighbors[j] << " ";
+    ShellSortForInt(colors, numVertices);
+
+
+    for (int i = 1; i < numVertices; ++i) {
+        int num1 = colors[i-1];
+        int num2 = colors[i];
+        int result = colors[i] - colors[i-1] ;
+
+        if(colors[i] - colors[i-1] > 1){
+            cout << 0 << endl;
+            return 0;
         }
-        cout << endl;
     }
+
+    switch (metodoOrdenacao) {
+        case 'b':
+            BubbleSort(graph, numVertices);
+            break;
+        case 's':
+            SelectionSort(graph, numVertices);
+            break;
+        case 'i':
+            InsertionSort(graph, numVertices);
+            break;
+        case 'q':
+            QuickSort(graph, numVertices);
+            break;
+        case 'm':
+            MergeSort(graph, numVertices);
+            break;
+        case 'p':
+            HeapSort(graph, numVertices);
+            break;
+        case 'y':
+            ShellSort(graph, numVertices);
+            break;
+    }
+
+
+
+    Check(graph, numVertices);
+//    ShellSort(graph, numVertices);
+//
+//    for (int i = 0; i < numVertices; ++i) {
+//        cout << "Vertex: " << graph[i].index << " Color: " << graph[i].color << endl;
+//        for (int j = 0; j < graph[i].numNeighbors; ++j) {
+//            cout << graph[i].neighbors[j] << " ";
+//        }
+//        cout << endl;
+//    }
     return 0;
 }
