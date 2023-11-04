@@ -1,4 +1,4 @@
-#include "ShellSort.h"
+#include "../include/ShellSort.h"
 
 
 ShellSort::ShellSort(Vertex* array, int size) : size(size) {

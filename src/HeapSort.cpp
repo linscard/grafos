@@ -1,4 +1,4 @@
-#include "HeapSort.h"
+#include "../include/HeapSort.h"
 
 HeapSort::HeapSort(Vertex* array, int size) : size(size) {
     sort(array);

@@ -1,4 +1,4 @@
-#include "QuickSort.h"
+#include "../include/QuickSort.h"
 
 QuickSort::QuickSort(Vertex *vector, int size) {
     sort(0, size-1, vector);

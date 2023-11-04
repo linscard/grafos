@@ -1,5 +1,5 @@
-#include "Check.h"
-#include "ShellSortForInt.h"
+#include "../include/Check.h"
+#include "../include/ShellSortForInt.h"
 
 Check::Check(Vertex *array, int size) {
 //    for (int i = 0; i < size; ++i) {

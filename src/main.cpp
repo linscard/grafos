@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
 
-#include "Vertex.h"
-#include "BubbleSort.h"
-#include "SelectionSort.h"
-#include "InsertionSort.h"
-#include "QuickSort.h"
-#include "MergeSort.h"
-#include "HeapSort.h"
-#include "ShellSort.h"
-#include "ShellSortForInt.h"
-#include "Check.h"
+#include "../include/Vertex.h"
+#include "../include/BubbleSort.h"
+#include "../include/SelectionSort.h"
+#include "../include/InsertionSort.h"
+#include "../include/QuickSort.h"
+#include "../include/MergeSort.h"
+#include "../include/HeapSort.h"
+#include "../include/ShellSort.h"
+#include "../include/ShellSortForInt.h"
+#include "../include/Check.h"
 
 
 

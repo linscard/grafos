@@ -1,4 +1,4 @@
-#include "InsertionSort.h"
+#include "../include/InsertionSort.h"
 
 InsertionSort::InsertionSort(Vertex *vector, int size) {
     for (int i = 1; i < size; ++i) {

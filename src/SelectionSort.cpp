@@ -1,4 +1,4 @@
-#include "SelectionSort.h"
+#include "../include/SelectionSort.h"
 
 SelectionSort::SelectionSort(Vertex *vector, int size) {
     for (int i = 0; i < size-1; ++i) {

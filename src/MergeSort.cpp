@@ -1,4 +1,4 @@
-#include "MergeSort.h"
+#include "../include/MergeSort.h"
 
 MergeSort::MergeSort(Vertex* array, int size) : size(size) {
     mergeSort(0, size - 1, array);
