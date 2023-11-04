@@ -62,15 +62,12 @@ int main() {
 
 
     for (int i = 1; i < numVertices; ++i) {
-        int num1 = colors[i-1];
-        int num2 = colors[i];
-        int result = colors[i] - colors[i-1] ;
-
         if(colors[i] - colors[i-1] > 1){
             cout << 0 << endl;
             return 0;
         }
     }
+
 
     switch (metodoOrdenacao) {
         case 'b':
@@ -99,14 +96,6 @@ int main() {
 
 
     Check(graph, numVertices);
-//    ShellSort(graph, numVertices);
-//
-//    for (int i = 0; i < numVertices; ++i) {
-//        cout << "Vertex: " << graph[i].index << " Color: " << graph[i].color << endl;
-//        for (int j = 0; j < graph[i].numNeighbors; ++j) {
-//            cout << graph[i].neighbors[j] << " ";
-//        }
-//        cout << endl;
-//    }
+
     return 0;
 }
