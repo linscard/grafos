@@ -2,13 +2,13 @@
 #include "ShellSortForInt.h"
 
 Check::Check(Vertex *array, int size) {
-    for (int i = 0; i < size; ++i) {
-        cout << "Vertex: " << array[i].index << " Color: " << array[i].color << endl;
-        for (int j = 0; j < array[i].numNeighbors; ++j) {
-            cout << array[i].neighbors[j] << " ";
-        }
-        cout << endl;
-    }
+//    for (int i = 0; i < size; ++i) {
+//        cout << "Vertex: " << array[i].index << " Color: " << array[i].color << endl;
+//        for (int j = 0; j < array[i].numNeighbors; ++j) {
+//            cout << array[i].neighbors[j] << " ";
+//        }
+//        cout << endl;
+//    }
     for (int i = 0; i < size; ++i) {
         Vertex vertex = array[i];
         if(vertex.color == 1) continue;
